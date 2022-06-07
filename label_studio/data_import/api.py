@@ -377,7 +377,7 @@ class FileUploadListAPI(generics.mixins.ListModelMixin,
     parser_classes = (JSONParser, MultiPartParser, FormParser)
     serializer_class = FileUploadSerializer
     permission_required = ViewClassPermission(
-        GET=all_permissions.projects_view,
+        GET=all_permissions.projects_change,
         DELETE=all_permissions.projects_change,
     )
     queryset = FileUpload.objects.all()

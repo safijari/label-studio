@@ -131,35 +131,35 @@ actions = [
             'type': 'confirm'
         }
     },
-    {
-        'entry_point': delete_tasks,
-        'permission': all_permissions.tasks_delete,
-        'title': 'Delete Tasks',
-        'order': 100,
-        'reload': True,
-        'dialog': {
-            'text': 'You are going to delete the selected tasks. Please confirm your action.',
-            'type': 'confirm'
-        }
-    },
-    {
-        'entry_point': delete_tasks_annotations,
-        'permission': all_permissions.tasks_delete,
-        'title': 'Delete Annotations',
-        'order': 101,
-        'dialog': {
-            'text': 'You are going to delete all annotations from the selected tasks. Please confirm your action.',
-            'type': 'confirm'
-        }
-    },
-    {
-        'entry_point': delete_tasks_predictions,
-        'permission': all_permissions.predictions_any,
-        'title': 'Delete Predictions',
-        'order': 102,
-        'dialog': {
-            'text': 'You are going to delete all predictions from the selected tasks. Please confirm your action.',
-            'type': 'confirm'
-        }
-    }
+    # {
+    #     'entry_point': delete_tasks,
+    #     'permission': all_permissions.tasks_delete,
+    #     'title': 'Delete Tasks',
+    #     'order': 100,
+    #     'reload': True,
+    #     'dialog': {
+    #         'text': 'You are going to delete the selected tasks. Please confirm your action.',
+    #         'type': 'confirm'
+    #     }
+    # },
+    # {
+    #     'entry_point': delete_tasks_annotations,
+    #     'permission': all_permissions.tasks_delete,
+    #     'title': 'Delete Annotations',
+    #     'order': 101,
+    #     'dialog': {
+    #         'text': 'You are going to delete all annotations from the selected tasks. Please confirm your action.',
+    #         'type': 'confirm'
+    #     }
+    # },
+    # {
+    #     'entry_point': delete_tasks_predictions,
+    #     'permission': all_permissions.predictions_any,
+    #     'title': 'Delete Predictions',
+    #     'order': 102,
+    #     'dialog': {
+    #         'text': 'You are going to delete all predictions from the selected tasks. Please confirm your action.',
+    #         'type': 'confirm'
+    #     }
+    # }
 ]

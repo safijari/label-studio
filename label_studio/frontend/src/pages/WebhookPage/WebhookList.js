@@ -32,9 +32,6 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
 
   return <Block name='webhook'>
     <Elem name='controls'>
-      <Button onClick={onAddWebhook}>
-        Add Webhook
-      </Button>
     </Elem>
     <Elem>
       {webhooks.length === 0? 

@@ -39,14 +39,15 @@ class WebhookFilterSet(django_filters.FilterSet):
         ],
     ),
 )
-@method_decorator(
-    name='post',
-    decorator=swagger_auto_schema(
-        tags=['Webhooks'],
-        operation_summary='Create a webhook',
-        operation_description="Create a webhook for your organization.",
-    ),
-)
+
+# @method_decorator(
+#     name='post',
+#     decorator=swagger_auto_schema(
+#         tags=['Webhooks'],
+#         operation_summary='Create a webhook',
+#         operation_description="Create a webhook for your organization.",
+#     ),
+# )
 class WebhookListAPI(generics.ListCreateAPIView):
     queryset = Webhook.objects.all()
     serializer_class = WebhookSerializer
@@ -61,13 +62,13 @@ class WebhookListAPI(generics.ListCreateAPIView):
         serializer.save(organization=self.request.user.active_organization)
 
 
+# @method_decorator(
+#     name='put',
+#     decorator=swagger_auto_schema(
+#         tags=['Webhooks'], operation_summary='Save webhook info', query_serializer=WebhookSerializerForUpdate
+#     ),
+# )
 @method_decorator(name='get', decorator=swagger_auto_schema(tags=['Webhooks'], operation_summary='Get webhook info'))
-@method_decorator(
-    name='put',
-    decorator=swagger_auto_schema(
-        tags=['Webhooks'], operation_summary='Save webhook info', query_serializer=WebhookSerializerForUpdate
-    ),
-)
 @method_decorator(
     name='patch',
     decorator=swagger_auto_schema(
@@ -91,23 +92,23 @@ class WebhookAPI(generics.RetrieveUpdateDestroyAPIView):
         return Webhook.objects.filter(organization=self.request.user.active_organization)
 
 
-@method_decorator(
-    name='get',
-    decorator=swagger_auto_schema(
-        tags=['Webhooks'],
-        operation_summary='Get all webhook actions',
-        operation_description='Get descriptions of all available webhook actions to set up webhooks.',
-        responses={"200": "Object with description data."},
-        manual_parameters=[
-            openapi.Parameter(
-                'organization-only',
-                openapi.IN_QUERY,
-                description="organization-only or not",
-                type=openapi.TYPE_BOOLEAN,
-            )
-        ],
-    ),
-)
+# @method_decorator(
+#     name='get',
+#     decorator=swagger_auto_schema(
+#         tags=['Webhooks'],
+#         operation_summary='Get all webhook actions',
+#         operation_description='Get descriptions of all available webhook actions to set up webhooks.',
+#         responses={"200": "Object with description data."},
+#         manual_parameters=[
+#             openapi.Parameter(
+#                 'organization-only',
+#                 openapi.IN_QUERY,
+#                 description="organization-only or not",
+#                 type=openapi.TYPE_BOOLEAN,
+#             )
+#         ],
+#     ),
+# )
 class WebhookInfoAPI(APIView):
     permission_classes = [AllowAny]
 
